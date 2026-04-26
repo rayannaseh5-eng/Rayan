@@ -1,0 +1,172 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  background: #f7efe4;
+  color: #2b1d14;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background: #2b1d14;
+  color: white;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+header h1 {
+  font-size: 26px;
+  color: #d9a441;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 22px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #d9a441;
+}
+
+/* HERO */
+.hero {
+  min-height: 85vh;
+  background: linear-gradient(rgba(43,29,20,.72), rgba(43,29,20,.72)),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+}
+
+.hero h2 {
+  font-size: 58px;
+  margin-bottom: 15px;
+  color: #f5d08a;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 28px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  background: #d9a441;
+  color: #2b1d14;
+  padding: 13px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: white;
+}
+
+/* SECTIONS */
+section {
+  padding: 70px 8%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 35px;
+  color: #5a351f;
+}
+
+/* ABOUT */
+.about {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  text-align: center;
+}
+
+.card h3 {
+  color: #8a4f25;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #4b3b30;
+}
+
+/* INFO */
+.info {
+  background: #fff8ef;
+}
+
+.info-box {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+/* EVENT */
+.event {
+  background: #2b1d14;
+  color: white;
+  text-align: center;
+}
+
+.event h2 {
+  color: #f5d08a;
+}
+
+/* FOOTER */
+footer {
+  background: #1b120d;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero h2 {
+    font-size: 40px;
+  }
+}
