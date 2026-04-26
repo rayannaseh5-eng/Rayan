@@ -1,0 +1,269 @@
+from pathlib import Path
+
+html = r"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Levante Coffee | Chandler, AZ</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7efe4;
+      color: #2b1d14;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #2b1d14;
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 26px;
+      color: #d9a441;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d9a441;
+    }
+
+    .hero {
+      min-height: 85vh;
+      background: linear-gradient(rgba(43,29,20,.72), rgba(43,29,20,.72)),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h2 {
+      font-size: 58px;
+      margin-bottom: 15px;
+      color: #f5d08a;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d9a441;
+      color: #2b1d14;
+      padding: 13px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 10px;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: white;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 35px;
+      color: #5a351f;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #8a4f25;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #4b3b30;
+    }
+
+    .info {
+      background: #fff8ef;
+    }
+
+    .info-box {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+
+    .info-box p {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .event {
+      background: #2b1d14;
+      color: white;
+      text-align: center;
+    }
+
+    .event h2 {
+      color: #f5d08a;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #1b120d;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero h2 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Levante Coffee</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#location">Location</a>
+      <a href="#event">Events</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Jordanian-Owned Coffee in Chandler</h2>
+      <p>Cozy atmosphere, friendly staff, handcrafted drinks, matcha favorites, karak tea, and community vibes.</p>
+      <a class="btn" href="tel:6022091241">Call Now</a>
+      <a class="btn" href="https://levantecoffee.com" target="_blank">Order Online</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Levante Coffee</h2>
+    <p class="about">
+      Levante Coffee is a small, Jordanian-owned coffee shop in Chandler, Arizona.
+      Known for its warm environment, unique drinks, and community feel, Levante is a local favorite
+      for coffee, matcha, karak tea, and handcrafted specialty beverages.
+    </p>
+  </section>
+
+  <section id="menu" class="info">
+    <h2 class="section-title">Menu Favorites</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Banana Pudding Matcha Dream</h3>
+        <p>A unique matcha drink with smooth banana pudding flavor.</p>
+      </div>
+      <div class="card">
+        <h3>Coconut Harmony Macchiato</h3>
+        <p>A creamy coconut-inspired macchiato with a balanced coffee finish.</p>
+      </div>
+      <div class="card">
+        <h3>Karak Tea</h3>
+        <p>A rich, spiced tea favorite with warm Middle Eastern flavor.</p>
+      </div>
+      <div class="card">
+        <h3>Lattes & Specialty Coffee</h3>
+        <p>Classic espresso drinks made fresh with a Levante touch.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="location">
+    <h2 class="section-title">Visit Us</h2>
+    <div class="info-box">
+      <p><strong>Address:</strong> Pollack Shoppes II, 2330 N Alma School Rd #134, Chandler, AZ 85224</p>
+      <p><strong>Phone:</strong> <a href="tel:6022091241">(602) 209-1241</a></p>
+      <p><strong>Hours:</strong> Open today until 10:00 PM</p>
+      <p><strong>Takeout:</strong> Available until 9:30 PM</p>
+      <p><strong>Price Range:</strong> $1–10 per person</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=2330+N+Alma+School+Rd+134+Chandler+AZ+85224" target="_blank">Get Directions</a>
+    </div>
+  </section>
+
+  <section id="event" class="event">
+    <h2>Upcoming Event</h2>
+    <p><strong>Mother’s Day Pop-Up</strong></p>
+    <p>Stop by next weekend and enjoy a warm Levante Coffee community experience.</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Levante Coffee. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+"""
+
+path = Path("/mnt/data/levante-coffee-website.html")
+path.write_text(html, encoding="utf-8")
+path.as_posix()
